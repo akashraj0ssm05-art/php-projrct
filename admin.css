@@ -1,0 +1,177 @@
+/* =========================================
+   Movie Ticket System - Admin Panel Styles
+   ========================================= */
+:root {
+    --primary: #e50914;
+    --dark: #1a1a2e;
+    --dark-light: #232342;
+    --sidebar-width: 240px;
+    --light-gray: #f5f6fa;
+    --shadow: 0 4px 14px rgba(0,0,0,0.08);
+    --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--light-gray); color: #222; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ---------- Login Page ---------- */
+.admin-login-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--dark), #000);
+}
+.admin-login-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: var(--radius);
+    width: 380px;
+    box-shadow: var(--shadow);
+}
+.admin-login-box h2 { text-align: center; margin-bottom: 6px; color: var(--dark); }
+.admin-login-box p.sub { text-align: center; color: #888; font-size: 13px; margin-bottom: 24px; }
+
+/* ---------- Layout ---------- */
+.admin-wrapper { display: flex; min-height: 100vh; }
+
+.sidebar {
+    width: var(--sidebar-width);
+    background: var(--dark);
+    color: #fff;
+    padding: 24px 0;
+    flex-shrink: 0;
+}
+.sidebar .brand {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0 24px 24px;
+    border-bottom: 1px solid #333350;
+    margin-bottom: 20px;
+}
+.sidebar .brand span { color: var(--primary); }
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #c9c9d8;
+    border-left: 3px solid transparent;
+    transition: 0.2s;
+}
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background: var(--dark-light);
+    color: #fff;
+    border-left-color: var(--primary);
+}
+
+.main-content { flex: 1; padding: 28px 34px; }
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+}
+.topbar h1 { font-size: 24px; color: var(--dark); }
+.topbar .admin-name { font-size: 14px; color: #666; }
+
+/* ---------- Cards / Stats ---------- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.stat-card {
+    background: #fff;
+    padding: 22px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary);
+}
+.stat-card .num { font-size: 28px; font-weight: 700; color: var(--dark); }
+.stat-card .label { font-size: 13px; color: #888; margin-top: 4px; }
+
+.card {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+.card h2 { margin-bottom: 18px; font-size: 18px; color: var(--dark); }
+
+/* ---------- Forms ---------- */
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 14px; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-family: inherit;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+}
+.btn.secondary { background: #555; }
+.btn.small { padding: 6px 12px; font-size: 12px; }
+.btn.full { width: 100%; }
+.btn:hover { opacity: 0.9; }
+
+/* ---------- Tables ---------- */
+table { width: 100%; border-collapse: collapse; }
+table th, table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid #eee; font-size: 14px; }
+table th { background: var(--light-gray); color: #444; }
+table tr:hover { background: #fafafa; }
+
+.status-tag {
+    padding: 3px 10px;
+    border-radius: 14px;
+    font-size: 11px;
+    font-weight: 700;
+}
+.status-tag.now { background: #e8f9ee; color: #1e8449; }
+.status-tag.soon { background: #fff4e0; color: #b9770e; }
+.status-tag.archived { background: #eee; color: #777; }
+.status-tag.confirmed { background: #e8f9ee; color: #1e8449; }
+.status-tag.cancelled { background: #fdecea; color: #c0392b; }
+
+.alert {
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+.alert.error { background: #fdecea; color: #c0392b; border: 1px solid #f5c6cb; }
+.alert.success { background: #e8f9ee; color: #1e8449; border: 1px solid #c3e6cb; }
+
+.action-links a { margin-right: 10px; font-size: 13px; font-weight: 600; }
+.action-links a.edit { color: #2980b9; }
+.action-links a.delete { color: #c0392b; }
+
+@media (max-width: 900px) {
+    .admin-wrapper { flex-direction: column; }
+    .sidebar { width: 100%; }
+    .form-row { grid-template-columns: 1fr; }
+}
